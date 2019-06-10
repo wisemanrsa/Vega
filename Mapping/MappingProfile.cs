@@ -10,6 +10,7 @@ namespace vega_be.Mapping
         {
             CreateMap<Make, MakeDto>();
             CreateMap<CarModel, CarModelDto>();
+            CreateMap<Feature, FeatureDto>();
         }
     }
 }

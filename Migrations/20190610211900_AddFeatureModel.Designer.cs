@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using vega_be.Persistance;
 
 namespace vega_be.Migrations
 {
     [DbContext(typeof(VegaDbContext))]
-    partial class VegaDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190610211900_AddFeatureModel")]
+    partial class AddFeatureModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

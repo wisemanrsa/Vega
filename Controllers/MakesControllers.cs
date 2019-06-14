@@ -23,10 +23,10 @@ namespace vega_be.Controllers
         }
 
         [HttpGet]
-        public async Task<IEnumerable<MakeDto>> GetMakes()
+        public async Task<IEnumerable<KeyValuePairDto>> GetMakes()
         {
             var makes = await this.context.Makes.ToListAsync();
-            return mapper.Map<List<Make>, List<MakeDto>>(makes);
+            return mapper.Map<List<Make>, List<KeyValuePairDto>>(makes);
         }
 
         [HttpGet("{makeId}/models")]

@@ -34,6 +34,7 @@ namespace vega_be
             services.AddAutoMapper();
 
             services.AddScoped<IVehicleRepository, VehicleRepository>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             services.AddMvc().AddJsonOptions(options =>
             {

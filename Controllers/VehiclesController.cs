@@ -73,5 +73,12 @@ namespace vega_be.Controllers
 
             return Ok(vehicle);
         }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
+        {
+            var vehicles = await vehicleRepository.GetAll();
+            return Ok(mapper.Map<List<Vehicle>, List<VehicleDto>>(vehicles));
+        }
     }
 }

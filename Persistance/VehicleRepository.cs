@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using vega_be.Interfaces;
@@ -30,6 +31,14 @@ namespace vega_be.Persistance
         public void Remove(Vehicle vehicle)
         {
             context.Vehicles.Remove(vehicle);
+        }
+
+        public async Task<List<Vehicle>> GetAll()
+        {
+            return await context.Vehicles
+                .Include(v => v.Features).ThenInclude(f => f.Feature)
+                .Include(v => v.Model).ThenInclude(m => m.Make)
+                .ToListAsync();
         }
     }
 }
